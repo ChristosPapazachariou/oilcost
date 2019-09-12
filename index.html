@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oil Cost Calculator</title>
+<script src="calc.js" type="text/javascript"></script>
+</head>
+<body>
+<body onload="clearAll();">
+<h1>Υπολογισμός Δαπάνης Πετρελαίου</h1>
+<table border = "2" cellpadding = "5" cellspacing = "7", width = "500">
+<tr align="center">
+<td>Σύνολο Δαπάνης Πετρελαίου</td>
+<td><input name="totalOil_cost" type="text" size=10 id='totaloil_cost'/></td>
+</tr>
+<tr align="center">
+<td>Μετρητής Ορόφου</td>
+<td><input name="floor1_counter" type="text" size=10 id='floor1_counter'/></td>
+</tr>
+<tr align="center">
+<td>Μετρητής Εισογείου</td>
+<td><input name="floor0_counter" type="text" size=10 id='floor0_counter'/></td>
+</tr>
+<tr align="center">
+<td>Μετρητής Boiler</td>
+<td><input name="boiler_counter" type="text" size=10 id='boiler_counter'/></td>
+</tr>
+<tr align="center">
+<td>Μετρητής Ενοικιαστού</td>
+<td><input name="tenant_counter" type="text" size=10 id='tenant_counter'/></td>
+</tr>
+<td><button onclick="calculateOil()">Υπολογισμός</button></td>
+<td><button onclick="clearAll()">Καθαρισμός</button></td>
+</table>
+<table border = "2" cellpadding = "5" cellspacing = "7", width = "500">
+<tr align="center">
+<td>Δαπάνη Ιδιοκτήτη</td>
+<td><input type="text" id='owner_cost' readonly ></td>
+</tr>
+<tr align="center">
+<td>Δαπάνη Ενοικιαστού</td>
+<td><input type="text" id='tenant_cost' readonly ></td>
+</tr>
+<tr align="center">
+<td>Σύνολο (επαλήθευσης)</td>
+<td><input type="text" id='verification_total' readonly ></td>
+</tr>
+</table>
+</body>
+</html>
