@@ -18,15 +18,20 @@ function calculateOil()
 	var resultTenant = 0;
 	var resultOwner = 0;
 	var resultVerif = 0;
+	var floatTolerance = 0.01;	//1% should be enough
 	
 	//do calculation by formula
 	resultOwner = 0.15*Dk*(1-0.286) + 0.85*Dk*((Mi*0.290 + Mo*0.316 + Mb*0.108)/(Me*0.286 + Mi*0.290 + Mo*0.316 + Mb*0.108));
 	resultTenant = 0.15*Dk*0.286 + 0.85*Dk*((Me*0.286)/(Me*0.286 + Mi*0.290 + Mo*0.316 + Mb*0.108));
 	resultVerif = resultTenant + resultOwner;
-	if (resultVerif != Dk)
+	if (abs(resultVerif - Dk)) >  resultVerif * floatTolerance)
 	{
 		window.alert("Amount Verification Failed!");
 		return false;
+	}
+	else if (resultVerif != Dk)
+	{
+		window.alert("Rounding Error, please verify amounts!");
 	}
 
 	//return the result to form
