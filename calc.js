@@ -6,8 +6,9 @@ function calculateOil()
 	var Mi = parseFloat(document.getElementById('floor0_counter').value);	//The difference between 2 records of the ground floor counter
 	var Mb = parseFloat(document.getElementById('boiler_counter').value);	//The difference between 2 records of the boiler counter
 	var Me = parseFloat(document.getElementById('tenant_counter').value);	//The difference between 2 records of the tenant counter
-	
 	if (Dk == "" || Mo == "", Mi == "" || Mb == "", Me == "" 
+
+	if (Dk == "" || Mo == "", Mi == "" || Mb == "", Me == ""
 		|| Dk == null || Mo == null, Mi == null || Mb == null, Me == null
 		|| !isNumeric(Dk) || !isNumeric(Mo) || !isNumeric(Mi) || !isNumeric(Mb) || !isNumeric(Me))
 	{
@@ -19,12 +20,12 @@ function calculateOil()
 	var resultOwner = 0;
 	var resultVerif = 0;
 	var floatTolerance = 0.01;	//1% should be enough
-	
+
 	//do calculation by formula
 	resultOwner = 0.15*Dk*(1-0.286) + 0.85*Dk*((Mi*0.290 + Mo*0.316 + Mb*0.108)/(Me*0.286 + Mi*0.290 + Mo*0.316 + Mb*0.108));
 	resultTenant = 0.15*Dk*0.286 + 0.85*Dk*((Me*0.286)/(Me*0.286 + Mi*0.290 + Mo*0.316 + Mb*0.108));
 	resultVerif = resultTenant + resultOwner;
-	if (abs(resultVerif - Dk)) >  resultVerif * floatTolerance)
+	if ((Math.abs(resultVerif - Dk)) >  (resultVerif * floatTolerance))
 	{
 		window.alert("Amount Verification Failed!");
 		return false;
