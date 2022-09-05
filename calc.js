@@ -6,10 +6,9 @@ function calculateOil()
 	var Mi = parseFloat(document.getElementById('floor0_counter').value);	//The difference between 2 records of the ground floor counter
 	var Mb = parseFloat(document.getElementById('boiler_counter').value);	//The difference between 2 records of the boiler counter
 	var Me = parseFloat(document.getElementById('tenant_counter').value);	//The difference between 2 records of the tenant counter
-	if (Dk == "" || Mo == "", Mi == "" || Mb == "", Me == "" 
 
-	if (Dk == "" || Mo == "", Mi == "" || Mb == "", Me == ""
-		|| Dk == null || Mo == null, Mi == null || Mb == null, Me == null
+	if (Dk == "" || Mo == "" || Mi == "" || Mb == "" || Me == ""
+		|| Dk == null || Mo == null || Mi == null || Mb == null || Me == null
 		|| !isNumeric(Dk) || !isNumeric(Mo) || !isNumeric(Mi) || !isNumeric(Mb) || !isNumeric(Me))
 	{
 		alert("Please Fill All Required Fields");
