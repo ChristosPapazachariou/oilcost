@@ -1,6 +1,26 @@
+
+/**
+ * The function calculates the cost of oil/gas for the owner and the tenant based on the counters'
+ * records and the total cost of the oil/gas purchase.
+ * 
+ * The function is called when the user clicks on the "Calculate" button.
+ * 
+ * The function first checks if all the required fields are filled and if they are numeric. If not, it
+ * displays an error message and returns false.
+ * 
+ * If all the required fields are filled and are numeric, the function calculates the cost of oil/gas
+ * for the owner and the tenant based on the counters' records and the total cost of the oil/gas
+ * purchase.
+ * 
+ * The function then checks if the calculated cost of oil/gas for the owner and the tenant is equal to
+ * the total cost of the oil/gas purchase. If not, it displays an error message and returns false.
+ * 
+ * If the calculated cost of oil/gas for the owner
+ * @returns the result of the calculation.
+ */
 function calculateOil()
 {
-	//The following variables represent the differences of counter records between 2 consecutive oil purchases
+	//The following variables represent the differences of counter records between 2 consecutive oil/gas purchases
 	var sDk = document.getElementById('totaloil_cost').value;
 	var sMo = document.getElementById('floor1_counter').value;
 	var sMi = document.getElementById('floor0_counter').value;
@@ -49,6 +69,9 @@ function calculateOil()
 	return true;
 }
 
+/**
+ * It clears all the values in the input fields.
+ */
 function clearAll()
 {
 	document.getElementById('totaloil_cost').value = "";
@@ -62,6 +85,11 @@ function clearAll()
 	document.getElementById('verification_total').value = "";
 }
 
+/**
+ * If the value passed to the function is not a number, return false, otherwise return true.
+ * @param num - The number to be checked.
+ * @returns True or False
+ */
 function isNumeric(num)
 {
 	return !isNaN(num)

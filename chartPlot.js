@@ -1,3 +1,7 @@
+/**
+ * It takes the values from the input fields, converts them to numbers, and then plots them on a pie
+ * chart.
+ */
 function chartPlot()
 {
   var xValues = ["Ιδιοκτήτης", "Ενοικιαστής"];

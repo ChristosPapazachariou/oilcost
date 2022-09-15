@@ -14,7 +14,7 @@
 <script src="calc.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="chartPlot.js" type="text/javascript"></script>
-
+<script src="saveFile.js" type="text/javascript"></script>
 </head>
 <body>
 <body onload="clearAll();">
@@ -44,7 +44,7 @@
 <td><input name="tenant_counter" type="text" size=10 id='tenant_counter'/></td>
 </tr>
 <td align="center"><button class = "button-71", onclick="clearAll()">Καθαρισμός</button></td>
-<td align="center"><button class = "button-71", onclick="calculateOil()",>Υπολογισμός</button></td>
+<td align="center"><button class = "button-71", onclick="calculateOil()">Υπολογισμός</button></td>
 </table>
 <table class = "content-table", border="thin" cellpadding="5" cellspacing="7" , width="500">
 <tr align="center">
@@ -58,6 +58,9 @@
 <tr align="center">
 <td>Σύνολο (επαλήθευσης)</td>
 <td><input type="text" id='verification_total' readonly ></td>
+</tr>
+<tr align="center">
+<td colspan = "2" align="center"><button class = "button-71", onclick="saveFile()">Αποθήκευση</button></td>
 </tr>
 </table>
 <canvas id="myChart" style="width:100%;max-width:500px" ></canvas>
