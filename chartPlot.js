@@ -6,8 +6,8 @@ function chartPlot()
 {
   var xValues = ["Ιδιοκτήτης", "Ενοικιαστής"];
   var yValues = [
-    parseFloat(document.getElementById('tenant_cost').value),
     parseFloat(document.getElementById('owner_cost').value),
+    parseFloat(document.getElementById('tenant_cost').value)
   ];
   var barColors = [
     "#b91d47",
