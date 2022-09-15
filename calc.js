@@ -1,18 +1,25 @@
 function calculateOil()
 {
 	//The following variables represent the differences of counter records between 2 consecutive oil purchases
-	var Dk = parseFloat(document.getElementById('totaloil_cost').value);	//The oil refill purchase cost
-	var Mo = parseFloat(document.getElementById('floor1_counter').value);	//The difference between 2 records of the floor 1 counter
-	var Mi = parseFloat(document.getElementById('floor0_counter').value);	//The difference between 2 records of the ground floor counter
-	var Mb = parseFloat(document.getElementById('boiler_counter').value);	//The difference between 2 records of the boiler counter
-	var Me = parseFloat(document.getElementById('tenant_counter').value);	//The difference between 2 records of the tenant counter
-
-	if (Dk == "" || Mo == "" || Mi == "" || Mb == "" || Me == ""
-		|| Dk == null || Mo == null || Mi == null || Mb == null || Me == null
-		|| !isNumeric(Dk) || !isNumeric(Mo) || !isNumeric(Mi) || !isNumeric(Mb) || !isNumeric(Me))
+	var sDk = document.getElementById('totaloil_cost').value;
+	var sMo = document.getElementById('floor1_counter').value;
+	var sMi = document.getElementById('floor0_counter').value;
+	var sMb = document.getElementById('boiler_counter').value;
+	var sMe = document.getElementById('tenant_counter').value;
+	
+	if ( sDk == "" || sMo == "" || sMi == "" || sMb == "" || sMe == ""
+	|| !isNumeric(sDk) || !isNumeric(sMo) || !isNumeric(sMi) || !isNumeric(sMb) || !isNumeric(sMe))
 	{
 		alert("Please Fill All Required Fields");
 		return false;
+	}
+	else
+	{
+		var Dk = parseFloat(sDk);	//The oil refill purchase cost
+		var Mo = parseFloat(sMo);	//The difference between 2 records of the floor 1 counter
+		var Mi = parseFloat(sMi);	//The difference between 2 records of the ground floor counter
+		var Mb = parseFloat(sMb);	//The difference between 2 records of the boiler counter
+		var Me = parseFloat(sMe);	//The difference between 2 records of the tenant counter
 	}
 
 	var resultTenant = 0;
@@ -38,6 +45,7 @@ function calculateOil()
 	document.getElementById('tenant_cost').value = resultTenant;
 	document.getElementById('owner_cost').value = resultOwner;
 	document.getElementById('verification_total').value = resultVerif;
+	chartPlot();
 	return true;
 }
 
