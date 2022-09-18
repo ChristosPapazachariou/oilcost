@@ -28,13 +28,13 @@
   background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
   border-radius: 5px;
   content: "";
-  height: 4%;
-  left: 4%;
+  height: 0%;
+  left: 0%;
   opacity: .5;
   position: absolute;
   top: 0;
   transition: all .7s;
-  width: 92%;
+  width: 0%;
 }
 
 .button-71:hover {
@@ -42,7 +42,7 @@
   transform: scale(1.1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   .button-71 {
     padding: 16px 48px;
   }
